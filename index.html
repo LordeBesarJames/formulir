@@ -45,8 +45,6 @@
 </head>
 <body>
 
-    <h2>Hubungi Kami</h2>
-
     <form id="formKontak" onsubmit="return validasiForm()">
         <label for="nama">Nama:</label>
         <input type="text" id="nama" name="nama">
@@ -71,25 +69,25 @@
         function validasiForm() {
             let valid = true;
 
-            // Bersihkan pesan error sebelumnya
+           
             document.getElementById("errorNama").textContent = "";
             document.getElementById("errorEmail").textContent = "";
             document.getElementById("errorTelepon").textContent = "";
             document.getElementById("errorPesan").textContent = "";
 
-            // Ambil nilai dari input
+         
             const nama = document.getElementById("nama").value.trim();
             const email = document.getElementById("email").value.trim();
             const telepon = document.getElementById("telepon").value.trim();
             const pesan = document.getElementById("pesan").value.trim();
 
-            // Validasi Nama
+         
             if (nama === "") {
                 document.getElementById("errorNama").textContent = "Nama harus diisi.";
                 valid = false;
             }
 
-            // Validasi Email (regex sederhana untuk format email)
+           
             const polaEmail = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
             if (email === "") {
                 document.getElementById("errorEmail").textContent = "Email harus diisi.";
@@ -99,7 +97,7 @@
                 valid = false;
             }
 
-            // Validasi Nomor Telepon (hanya angka)
+        
             const polaTelepon = /^[0-9]{10,15}$/;
             if (telepon === "") {
                 document.getElementById("errorTelepon").textContent = "Nomor telepon harus diisi.";
@@ -109,7 +107,7 @@
                 valid = false;
             }
 
-            // Validasi Pesan
+         
             if (pesan === "") {
                 document.getElementById("errorPesan").textContent = "Pesan harus diisi.";
                 valid = false;
